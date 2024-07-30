@@ -17,8 +17,7 @@ public class UserController {
     private UserService userService;
     @PostMapping("api/create")
     public ResponseEntity<User> createUser(@RequestBody User user){
-        User reg = userService.createReg(user);
-       return  new ResponseEntity<>(user, HttpStatus.CREATED);
+       return  new ResponseEntity<>(userService.createReg(user), HttpStatus.CREATED);
 
     }
     @GetMapping("{id}")
