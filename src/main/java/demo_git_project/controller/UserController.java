@@ -5,6 +5,7 @@ import demo_git_project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +21,8 @@ public class UserController {
        return  new ResponseEntity<>(user, HttpStatus.CREATED);
 
     }
-    public ResponseEntity<User> getById(){
+    @GetMapping("{id}")
+    public ResponseEntity<User> getById(Long id){
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
