@@ -20,4 +20,7 @@ public class UserController {
        return  new ResponseEntity<>(user, HttpStatus.CREATED);
 
     }
+    public ResponseEntity<User> getById(){
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
